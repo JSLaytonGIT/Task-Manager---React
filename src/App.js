@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Header from './components/header/Header';
 import TaskManager from './pages/taskManager/TaskManager';
+import WeatherApp from './pages/weatherApp/WeatherApp';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import './App.css';
@@ -52,9 +53,10 @@ const App = () => {
       <DndProvider backend={HTML5Backend}>
       <Router>
         <div className="App">
-          <Header currentPage="taskManager" onClick={toggleForm}/>
+          <Header onClick={toggleForm}/>
           <Routes>
             <Route path="/taskManager" element={<TaskManager isFormOpen={isFormOpen} onClose={toggleForm}/>} />
+            <Route path="/weatherApp" element={<WeatherApp />} />
             <Route path="/" element={<Navigate replace to="/taskManager" />} />
           </Routes>
         </div>

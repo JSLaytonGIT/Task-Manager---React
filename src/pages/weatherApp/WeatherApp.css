@@ -1,0 +1,33 @@
+.weather-app {
+  width: 100%;
+  height: calc(100vh - 60px);
+  margin: 0;
+  overflow: hidden;
+  transition: background-image;
+}
+
+.weather-app.day {
+  background-image: url('./assets/sky.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.weather-app.night {
+  background-image: url('./assets/meteor.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  color: white;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: white;
+}
+
+.weatherIcon {
+  margin-top: 40px;
+}

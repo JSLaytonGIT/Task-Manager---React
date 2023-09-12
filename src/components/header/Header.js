@@ -1,12 +1,22 @@
 import React from 'react';
 import { Button } from '@mui/material';
+import { useLocation } from 'react-router-dom';
 import './Header.css';
 
-const Header = ({ currentPage, onClick }) => {
+const Header = ({ onClick }) => {
+  const location = useLocation();
+  const currentPage = location.pathname.replace('/', '');
+
   return (
     <header className="header">
       <div className="left">
-      <div className="title">Task Manager</div>
+      {currentPage === "taskManager" && <div className="title">Task Manager</div>}
+      {currentPage === "weatherApp" && <div className="title">Weather App</div>}
+      <div className='divider'></div>
+        <div className="link">
+          {currentPage === "taskManager" && <a href="/weatherApp">Weather App</a>}
+          {currentPage === "weatherApp" && <a href="/taskManager">Task Manger</a>}
+        </div>
       </div>
       <div className="center">
         {currentPage === 'taskManager' ? (

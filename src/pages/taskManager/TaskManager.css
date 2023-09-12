@@ -1,3 +1,13 @@
+.task-manager {
+  background-image: url('./assets/white.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh - 60px);
+  margin: 0;
+  overflow: hidden;
+}
+
 .task-manager-container {
     margin-top: 32px;
     margin-left: 16px;
@@ -13,7 +23,7 @@
   .task-column {
     padding: 16px;
     padding-top: 30px;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 8px;
     position: relative;
   }
@@ -109,7 +119,7 @@
   }
 
   .task-item {
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 8px;
     padding: 8px;
     padding-left: 12px;

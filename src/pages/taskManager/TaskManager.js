@@ -59,57 +59,59 @@ const TaskManager = ({ isFormOpen, onClose }) => {
   });
 
   return (
-    <div className="task-manager-container">
-      <Modal open={isFormOpen} onClose={onClose}>
-        <AddTaskForm onAddTask={handleAddTask} onClose={onClose} />
-      </Modal>
-      <div className="task-columns">
-        <div className="task-column not-started" ref={notStartedDrop}>
-          <h2 className="column-header">
-            <AccountTreeIcon className="icon" />
-            Not Started
-          </h2>
-          <TaskList
-            tasks={tasks.filter((task) => task.status === "notStarted")}
-            onDeleteTask={handleDeleteTask}
-          />
+    <div className="task-manager">
+      <div className="task-manager-container">
+        <Modal open={isFormOpen} onClose={onClose}>
+          <AddTaskForm onAddTask={handleAddTask} onClose={onClose} />
+        </Modal>
+        <div className="task-columns">
+          <div className="task-column not-started" ref={notStartedDrop}>
+            <h2 className="column-header">
+              <AccountTreeIcon className="icon" />
+              Not Started
+            </h2>
+            <TaskList
+              tasks={tasks.filter((task) => task.status === "notStarted")}
+              onDeleteTask={handleDeleteTask}
+            />
+          </div>
+          <div className="task-column in-progress" ref={inProgressDrop}>
+            <h2 className="column-header">
+              <DoubleArrowIcon className="icon" />
+              In Progress
+            </h2>
+            <TaskList
+              tasks={tasks.filter((task) => task.status === "inProgress")}
+              onDeleteTask={handleDeleteTask}
+            />
+          </div>
+          <div className="task-column finished" ref={finishedDrop}>
+            <h2 className="column-header">
+              <ThumbUpOffAltIcon className="icon" />
+              Finished
+            </h2>
+            <TaskList
+              tasks={tasks.filter((task) => task.status === "finished")}
+              onDeleteTask={handleDeleteTask}
+            />
+          </div>
+          <div className="task-column shelved" ref={shelvedDrop}>
+            <h2 className="column-header">
+              <PauseIcon className="icon" />
+              Shelved
+            </h2>
+            <TaskList
+              tasks={tasks.filter((task) => task.status === "shelved")}
+              onDeleteTask={handleDeleteTask}
+            />
+          </div>
         </div>
-        <div className="task-column in-progress" ref={inProgressDrop}>
-          <h2 className="column-header">
-            <DoubleArrowIcon className="icon" />
-            In Progress
-          </h2>
-          <TaskList
-            tasks={tasks.filter((task) => task.status === "inProgress")}
-            onDeleteTask={handleDeleteTask}
-          />
+        <div className="text-below-container">
+          <strong>Task borders</strong>
+          <p><span className="green">Green</span> - low priority</p>
+          <p><span className="orange">Orange</span> - medium priority</p>
+          <p><span className="red">Red</span> - high priority</p>
         </div>
-        <div className="task-column finished" ref={finishedDrop}>
-          <h2 className="column-header">
-            <ThumbUpOffAltIcon className="icon" />
-            Finished
-          </h2>
-          <TaskList
-            tasks={tasks.filter((task) => task.status === "finished")}
-            onDeleteTask={handleDeleteTask}
-          />
-        </div>
-        <div className="task-column shelved" ref={shelvedDrop}>
-          <h2 className="column-header">
-            <PauseIcon className="icon" />
-            Shelved
-          </h2>
-          <TaskList
-            tasks={tasks.filter((task) => task.status === "shelved")}
-            onDeleteTask={handleDeleteTask}
-          />
-        </div>
-      </div>
-      <div className="text-below-container">
-        <strong>Task borders</strong>
-        <p><span className="green">Green</span> - low priority</p>
-        <p><span className="orange">Orange</span> - medium priority</p>
-        <p><span className="red">Red</span> - high priority</p>
       </div>
     </div>
   );

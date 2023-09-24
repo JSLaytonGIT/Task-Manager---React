@@ -64,6 +64,8 @@ const AddTaskForm = ({ onAddTask, onClose }) => {
     }
 
     handleAdd();
+
+    setTimeout(() => {onClose()}, 100);
   };
 
   const handleFormDataChange = (fieldName, value) => {

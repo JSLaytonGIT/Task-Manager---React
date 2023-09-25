@@ -1,3 +1,5 @@
+CLICK HERE TO RUN THE APPLICATION. VERCEL LINK: https://task-manager-weather-app-combo-react.vercel.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

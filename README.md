@@ -1,4 +1,4 @@
-CLICK HERE TO RUN THE APPLICATION. VERCEL LINK: https://task-manager-weather-app-combo-react.vercel.app/
+Click here to run the application. VERCEL LINK: https://task-manager-weather-app-combo-react.vercel.app/
 
 # Getting Started with Create React App
 

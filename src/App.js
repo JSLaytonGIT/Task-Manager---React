@@ -39,7 +39,7 @@ const theme = createTheme({
               color: 'white !important',
             },
             '&:focused label': {
-              color: 'white !important',
+              color: 'white',
             },
           },
           '& .MuiInputLabel-root': {

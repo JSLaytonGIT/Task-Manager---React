@@ -94,6 +94,7 @@ const AddTaskForm = ({ onAddTask, onClose }) => {
                         variant="outlined"
                         error={!!formErrors.title}
                         helperText={formErrors.title}
+                        InputLabelProps={{style: { color: '#fff' }}}
                     />
                     <TextField
                         label="Description"
@@ -108,6 +109,7 @@ const AddTaskForm = ({ onAddTask, onClose }) => {
                             '& .MuiInputBase-root': {
                             color: 'white',
                         }}}
+                        InputLabelProps={{style: { color: '#fff' }}}
                     />
                     <Dropdown
                         name="priority"
@@ -130,7 +132,7 @@ const AddTaskForm = ({ onAddTask, onClose }) => {
                         fullWidth
                         margin="normal"
                         variant="outlined"
-                        InputLabelProps={{ shrink: true }}
+                        InputLabelProps={{shrink: true}}
                         sx={{colorScheme: 'dark'}}
                     />
                     <Dropdown

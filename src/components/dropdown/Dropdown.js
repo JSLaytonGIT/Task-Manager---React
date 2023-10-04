@@ -23,6 +23,7 @@ const Dropdown = ({ options = [], name, label = "Select an option", selectedOpti
         }
       }}}
       inputProps={{MenuProps: {MenuListProps: {sx: {backgroundColor: '#333'}}}}}
+      InputLabelProps={{style: { color: '#fff' }}}
     >
       {options.map((option) => (
         <MenuItem key={option.value} value={option.value} sx={{

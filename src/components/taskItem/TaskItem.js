@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DeleteIcon from '@mui/icons-material/Delete';
+import CloseIcon from '@mui/icons-material/Close';
 import DeleteConfirmationDialog from './DeleteConfirmationDialog';
 import { useDrag } from 'react-dnd';
 
@@ -115,7 +115,7 @@ const TaskItem = ({ task, onDelete }) => {
           onClick={handleDeleteClick}
         >
           <div className="delete-button-scale">
-          <DeleteIcon />
+            <CloseIcon />
           </div>
         </button>
       <DeleteConfirmationDialog

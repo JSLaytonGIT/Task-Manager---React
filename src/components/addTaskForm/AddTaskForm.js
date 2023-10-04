@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Box, TextField, IconButton, Typography } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import { modalstyle, buttonBox, closeButton, outerButtonBox } from './AddTaskForm.Modal.styles';
+import { modalstyle, buttonBox, closeButton, outerButtonBox, title } from './AddTaskForm.Modal.styles';
 import Dropdown from '../dropdown/Dropdown';
 import TimeSlider from '../TimeSlider/TimeSlider';
 
@@ -78,11 +78,11 @@ const AddTaskForm = ({ onAddTask, onClose }) => {
   return (
             <Box sx={modalstyle}>
                 <Box sx={closeButton}>
-                    <IconButton onClick={onClose}>
+                    <IconButton onClick={onClose} sx={{color: '#ef4100'}}>
                           <CloseIcon />
                     </IconButton>
                 </Box>
-                <Typography sx={{fontSize: 20, textAlign:"center", paddingBottom: '2px', color: '#00aeef'}}>Add Task</Typography>
+                <Typography sx={title}>Add Task</Typography>
                 <form onSubmit={handleSubmit}>
                     <TextField
                         label="Title"
@@ -106,7 +106,7 @@ const AddTaskForm = ({ onAddTask, onClose }) => {
                         variant="outlined"
                         sx={{
                             '& .MuiInputBase-root': {
-                            color: '#00aeef',
+                            color: 'white',
                         }}}
                     />
                     <Dropdown
@@ -131,6 +131,7 @@ const AddTaskForm = ({ onAddTask, onClose }) => {
                         margin="normal"
                         variant="outlined"
                         InputLabelProps={{ shrink: true }}
+                        sx={{colorScheme: 'dark'}}
                     />
                     <Dropdown
                         name="status"
@@ -141,7 +142,7 @@ const AddTaskForm = ({ onAddTask, onClose }) => {
                         onOptionChange={(selectedValue) => handleFormDataChange('status', selectedValue)}
                     />
                     <Box sx={outerButtonBox}>
-                        <Button sx={buttonBox} type="submit" variant="contained" color="primary">
+                        <Button sx={buttonBox} type="submit" variant="contained">
                             Submit
                         </Button>
                     </Box>

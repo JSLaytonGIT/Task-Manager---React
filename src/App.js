@@ -15,25 +15,35 @@ const theme = createTheme({
         root: {
           marginTop: 8,
           marginBottom: 8,
+          '&.MuiInputBase-input': {
+            color: 'white'
+          },
           '& .MuiOutlinedInput-root': {
             '& fieldset': {
               borderColor: '#00aeef',
+              backgroundColor: '#333',
+              'z-index': -1,
+              boxShadow: '0 0 4px #00aeef'
             },
             '&:hover fieldset': {
               borderColor: '#00aeef',
             },
             '&.Mui-focused fieldset': {
-              borderColor: '#00aeef',
+              boxShadow: '0 0 20px #ef4100',
+              borderColor: '#ef4100',
             },
             '& input': {
-              color: '#00aeef',
+              color: 'white',
             },
             '& label': {
-              color: '#00aeef !important',
+              color: 'white !important',
+            },
+            '&:focused label': {
+              color: 'white !important',
             },
           },
           '& .MuiInputLabel-root': {
-            color: '#00aeef'
+            color: 'white'
           },
         },
       },
@@ -51,16 +61,16 @@ const App = () => {
   return (    
     <ThemeProvider theme={theme}>
       <DndProvider backend={HTML5Backend}>
-      <Router>
-        <div className="App">
-          <Header onClick={toggleForm}/>
-          <Routes>
-            <Route path="/taskManager" element={<TaskManager isFormOpen={isFormOpen} onClose={toggleForm}/>} />
-            <Route path="/weatherApp" element={<WeatherApp />} />
-            <Route path="/" element={<Navigate replace to="/taskManager" />} />
-          </Routes>
-        </div>
-      </Router>
+          <Router>
+            <div className="App">
+              <Header onClick={toggleForm} />
+              <Routes>
+                <Route path="/taskManager" element={<TaskManager isFormOpen={isFormOpen} onClose={toggleForm}/>} />
+                <Route path="/weatherApp" element={<WeatherApp />} />
+                <Route path="/" element={<Navigate replace to="/taskManager" />} />
+              </Routes>
+            </div>
+          </Router>
       </DndProvider>
     </ThemeProvider>  
   );

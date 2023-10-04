@@ -10,13 +10,7 @@ const Header = ({ onClick }) => {
   return (
     <header className="header">
       <div className="left">
-      {currentPage === "taskManager" && <div className="title">Task Manager</div>}
-      {currentPage === "weatherApp" && <div className="title">Weather App</div>}
-      <div className='divider'></div>
-        <div className="link">
-          {currentPage === "taskManager" && <a href="/weatherApp">Weather App</a>}
-          {currentPage === "weatherApp" && <a href="/taskManager">Task Manger</a>}
-        </div>
+        {currentPage === "taskManager" && <div className="title">Task Manager</div>}
       </div>
       <div className="center">
         {currentPage === 'taskManager' ? (

@@ -4,7 +4,7 @@ import AddTaskForm from "../../components/addTaskForm/AddTaskForm";
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
-import PauseIcon from '@mui/icons-material/Pause';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import mockTasks from "./mockTasks";
 import { useDrop } from 'react-dnd';
 import { Modal } from '@mui/material';
@@ -53,10 +53,10 @@ const TaskManager = ({ isFormOpen, onClose }) => {
     drop: handleTaskDrop('finished'),
   });
 
-  const [, shelvedDrop] = useDrop({
-    accept: 'TASK_ITEM',
-    drop: handleTaskDrop('shelved'),
-  });
+  // const [, shelvedDrop] = useDrop({
+  //   accept: 'TASK_ITEM',
+  //   drop: handleTaskDrop('shelved'),
+  // });
 
   return (
     <div className="task-manager">
@@ -66,36 +66,36 @@ const TaskManager = ({ isFormOpen, onClose }) => {
         </Modal>
         <div className="task-columns">
           <div className="task-column not-started" ref={notStartedDrop}>
-            <h2 className="column-header">
-              <AccountTreeIcon className="icon" />
+            <span className="column-header">
+              <AccountTreeIcon className="icon" style={{'color': 'red'}} />
               Not Started
-            </h2>
+            </span>
             <TaskList
               tasks={tasks.filter((task) => task.status === "notStarted")}
               onDeleteTask={handleDeleteTask}
             />
           </div>
           <div className="task-column in-progress" ref={inProgressDrop}>
-            <h2 className="column-header">
-              <DoubleArrowIcon className="icon" />
+            <span className="column-header">
+              <DoubleArrowIcon className="icon" style={{'color': 'yellow'}} />
               In Progress
-            </h2>
+            </span>
             <TaskList
               tasks={tasks.filter((task) => task.status === "inProgress")}
               onDeleteTask={handleDeleteTask}
             />
           </div>
           <div className="task-column finished" ref={finishedDrop}>
-            <h2 className="column-header">
-              <ThumbUpOffAltIcon className="icon" />
+            <span className="column-header">
+              <ThumbUpOffAltIcon className="icon" style={{'color': '#00dc00'}} />
               Finished
-            </h2>
+            </span>
             <TaskList
               tasks={tasks.filter((task) => task.status === "finished")}
               onDeleteTask={handleDeleteTask}
             />
           </div>
-          <div className="task-column shelved" ref={shelvedDrop}>
+          {/* <div className="task-column shelved" ref={shelvedDrop}>
             <h2 className="column-header">
               <PauseIcon className="icon" />
               Shelved
@@ -104,13 +104,13 @@ const TaskManager = ({ isFormOpen, onClose }) => {
               tasks={tasks.filter((task) => task.status === "shelved")}
               onDeleteTask={handleDeleteTask}
             />
-          </div>
+          </div> */}
         </div>
         <div className="text-below-container">
-          <strong>Task borders</strong>
-          <p><span className="green">Green</span> - low priority</p>
-          <p><span className="orange">Orange</span> - medium priority</p>
-          <p><span className="red">Red</span> - high priority</p>
+          <strong>Task borders -</strong>
+          <p className="green"><FiberManualRecordIcon style={{ position: "relative", top: "6.5px"}} /> &nbsp;low priority</p>
+          <p className="orange"><FiberManualRecordIcon style={{ position: "relative", top: "6.5px"}} /> &nbsp;medium priority</p>
+          <p className="red"><FiberManualRecordIcon style={{ position: "relative", top: "6.5px"}} /> &nbsp;high priority</p>
         </div>
       </div>
     </div>

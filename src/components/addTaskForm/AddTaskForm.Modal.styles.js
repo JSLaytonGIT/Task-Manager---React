@@ -1,20 +1,28 @@
 export const modalstyle = {
     position: 'absolute',
-    top: '50%',
+    top: '47%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
+    width: 412,
     bgcolor: 'background.paper',
-    border: '1px solid #00aeef',
-    boxShadow: '0 0 30px #00aeef',
+    border: '1px solid #ef4100',
+    boxShadow: '0 0 30px #ef4100',
     p: 4,
     paddingTop: '18px',
+    backgroundColor: '#232323',
 };
 
 export const buttonBox = {
     display:"flex",
-    gap:1,
+    gap: 1,
     top: '10px',
+    backgroundColor: '#00aeef',
+    '&:hover': {
+        borderColor: '#fff',
+    },
+    '&.MuiButton-root:hover': {
+        borderColor: '#fff',
+    },
 };
 
 export const closeButton = {
@@ -27,4 +35,12 @@ export const outerButtonBox = {
     'display': 'flex',
     'align-items': 'center',
     'justify-content': 'center',
+}
+
+export const title = {
+    fontSize: 20,
+    textAlign: "center",
+    paddingBottom: '2px',
+    color: 'white',
+    fontWeight: 'bold',
 }

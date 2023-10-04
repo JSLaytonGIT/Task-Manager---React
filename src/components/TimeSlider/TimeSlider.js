@@ -66,7 +66,7 @@ const TimeSlider = ({name, onTimeChange}) => {
 
   return (
     <div style={containerStyle}>
-      <BlueButton onClick={toggleSlider} variant="outlined">
+      <BlueButton onClick={toggleSlider} variant="outlined" sx={{boxShadow: '0 0 4px #00aeef', borderColor:'#00aeef', backgroundColor: '#333', color: 'white', '&:hover': {borderColor: '#ef4100', boxShadow: '0 0 20px #ef4100', backgroundColor: '#333'}}}>
         Duration
       </BlueButton>
       <div style={sliderContainerStyle}>
@@ -79,8 +79,8 @@ const TimeSlider = ({name, onTimeChange}) => {
           step={5}
           min={0}
           max={1440}
-          marks={marks}
           valueLabelFormat={valueLabelFormat}
+          sx={{color: '#00aeef', marginTop: '9px', marginBottom: '9px'}}
         />
       </div>
     </div>

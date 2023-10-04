@@ -17,15 +17,20 @@ const Dropdown = ({ options = [], name, label = "Select an option", selectedOpti
       variant="outlined"
       sx={{ width: "200px",
       '& .MuiInputBase-root': {
-        color: '#00aeef',
+        color: 'white',
+        '.MuiSvgIcon-root ': {
+          fill: "white !important",
+        }
       }}}
+      inputProps={{MenuProps: {MenuListProps: {sx: {backgroundColor: '#333'}}}}}
     >
       {options.map((option) => (
         <MenuItem key={option.value} value={option.value} sx={{
           '&.Mui-selected': {
-            color: '#00aeef',
+            color: 'white',
+            backgroundColor: '#333',
           },
-          color: '#00aeef'
+          color: 'white',
         }}>
           {option.label}
         </MenuItem>

@@ -96,6 +96,9 @@
     color: #fff;
     font-size: 20px;
     font-weight: bold;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
   
 .icon {
@@ -144,6 +147,10 @@
 
     &:after {
         bottom: 0;
+    }
+
+    &:hover {
+        cursor: grab;
     }
 
     .delete-button {
@@ -294,6 +301,9 @@
     padding: 20px;
     border-radius: 8px;
     width: 200px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 
 .text-below-container p {

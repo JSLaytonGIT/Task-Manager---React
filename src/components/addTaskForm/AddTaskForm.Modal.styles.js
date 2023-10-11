@@ -1,15 +1,16 @@
 export const modalstyle = {
     position: 'absolute',
-    top: '47%',
+    top: '46%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 412,
+    width: 414,
     bgcolor: 'background.paper',
     border: '1px solid #ef4100',
     boxShadow: '0 0 30px #ef4100',
     p: 4,
     paddingTop: '18px',
     backgroundColor: '#232323',
+    borderRadius: '10px',
 };
 
 export const buttonBox = {

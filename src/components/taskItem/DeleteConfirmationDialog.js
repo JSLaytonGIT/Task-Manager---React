@@ -26,7 +26,10 @@ const textContainerStyle = {
 };
 
 const DialogContentTextStyle = {
-  color: 'white'
+  color: 'white',
+  'user-select': 'none',
+  '-webkit-user-select': 'none',
+  '-moz-user-select': 'none',
 }
 
 const iconStyle = {
